@@ -1,2 +1,4 @@
-def authenticate_user(email: str, senha: str):
-    ...
+import bcrypt
+
+def hash_password(password: str) -> str:
+    return bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
